@@ -15,7 +15,7 @@ class ExampleConversation extends Conversation
      */
     public function askReason()
     {
-        $question = Question::create("Huh - você me acordou. O que você precisa?")
+        $question = Question::create("Ainda estou aqui. Precisa de algo mais?")
             ->fallback('Unable to ask question')
             ->callbackId('ask_reason')
             ->addButtons([
