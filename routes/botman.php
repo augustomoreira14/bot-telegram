@@ -6,4 +6,4 @@ $botman = resolve('botman');
 $botman->hears('/start', function ($bot) {
     $bot->reply('Olá! Tudo bem?');
 });
-$botman->hears('Start conversation', BotManController::class.'@startConversation');
+$botman->hears('/start', BotManController::class.'@startConversation');
