@@ -15,12 +15,12 @@ class ExampleConversation extends Conversation
      */
     public function askReason()
     {
-        $question = Question::create("Huh - you woke me up. What do you need?")
+        $question = Question::create("Huh - você me acordou. O que você precisa?")
             ->fallback('Unable to ask question')
             ->callbackId('ask_reason')
             ->addButtons([
-                Button::create('Tell a joke')->value('joke'),
-                Button::create('Give me a fancy quote')->value('quote'),
+                Button::create('Conte uma piada')->value('joke'),
+                Button::create('Diga uma citação chique')->value('quote'),
             ]);
 
         return $this->ask($question, function (Answer $answer) {
@@ -32,6 +32,7 @@ class ExampleConversation extends Conversation
                     $this->say(Inspiring::quote());
                 }
             }
+            $this->askReason();
         });
     }
 
